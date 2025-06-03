@@ -1,0 +1,68 @@
+# 通过UVX运行Minecraft MCP服务器
+
+## 构建和发布PyPI包
+
+1. 运行构建脚本：
+   ```
+   python build_pypi.py
+   ```
+
+2. 按照提示选择是否上传到PyPI或TestPyPI
+
+## 使用UVX运行
+
+安装包后，可以通过以下命令运行：
+
+```
+uvx minecraft-mcp-server
+```
+
+启动Web配置界面：
+
+```
+uvx minecraft-web-config
+```
+
+## 在Trae IDE中配置
+
+在Trae IDE的mcp.json中添加以下配置：
+
+```json
+{
+    "mcpServers": {
+        "minecraft": {
+            "command": "uvx",
+            "args": [
+                "minecraft-mcp-server"
+            ],
+            "env": {
+                "MC_HOST": "localhost",
+                "MC_RCON_PORT": "25575",
+                "MC_RCON_PASSWORD": "your_password"
+            }
+        }
+    }
+}
+```
+
+## 本地开发测试
+
+如果不想发布到PyPI，可以在本地安装开发版本：
+
+```
+pip install -e .
+```
+
+然后可以直接运行：
+
+```
+minecraft-mcp-server
+minecraft-web-config
+```
+
+或者通过uvx运行：
+
+```
+uvx minecraft-mcp-server
+uvx minecraft-web-config
+```
