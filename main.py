@@ -3,10 +3,15 @@
 import asyncio
 from mcp.server.stdio import stdio_server
 from mcp.server import Server
-from resources import register_all_resources
+# 移除对不存在的resources模块的引用
 from tools import register_all_tools
 
 app = Server("我的世界mcp")
+
+# 定义一个空的register_all_resources函数
+def register_all_resources(server):
+    """注册所有资源"""
+    pass
 
 # 注册资源和工具
 register_all_resources(app)

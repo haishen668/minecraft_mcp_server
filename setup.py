@@ -14,14 +14,14 @@ with open("requirements.txt", "r", encoding="utf-8") as f:
 
 setup(
     name="minecraft-mcp-server",
-    version="1.0.0",
+    version="1.0.2",
     author="haishen668",
     author_email="2821396723@qq.com", 
     description="Minecraft MCP Server",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/haishen668/minecraft_mcp_server",  
-    packages=find_packages(include=['tools', 'resources']),
+    packages=find_packages(include=['tools']),  # 移除对不存在的resources目录的引用
     include_package_data=True,
     package_data={
         "": ["templates/*", "static/*", "icon.ico"],

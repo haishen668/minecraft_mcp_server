@@ -39,7 +39,6 @@ def build_mcp_server():
         "--console",                   # 保留控制台窗口（MCP服务器需要stdio通信）
         "--name", "minecraft_mcp_server",  # 输出文件名
         "--icon", "icon.ico",          # 图标文件（如果存在）
-        "--add-data", "resources;resources",  # 添加资源文件夹
         "--add-data", "tools;tools",          # 添加工具文件夹
         "--add-data", "config.py;.",          # 添加配置文件
         "--hidden-import", "mcrcon",          # 隐式导入
